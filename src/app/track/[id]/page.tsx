@@ -39,16 +39,22 @@ const TrackPage = () => {
   }, [id]);
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Track Your Location</h1>
+    <div className="container mx-auto p-4 sm:p-6 md:p-8">
+      <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">
+        Track Your Location
+      </h1>
       {location ? (
         <div>
-          <p>Latitude: {location.coords.latitude}</p>
-          <p>Longitude: {location.coords.longitude}</p>
+          <p className="text-sm sm:text-base md:text-lg">
+            Latitude: {location.coords.latitude}
+          </p>
+          <p className="text-sm sm:text-base md:text-lg">
+            Longitude: {location.coords.longitude}
+          </p>
           <Map
             center={[location.coords.latitude, location.coords.longitude]}
             zoom={13}
-            className="h-64 w-full"
+            className="h-48 sm:h-64 md:h-80 w-full"
           >
             <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -60,7 +66,9 @@ const TrackPage = () => {
           </Map>
         </div>
       ) : (
-        <p>{error || "Requesting location..."}</p>
+        <p className="text-sm sm:text-base md:text-lg">
+          {error || "Requesting location..."}
+        </p>
       )}
     </div>
   );

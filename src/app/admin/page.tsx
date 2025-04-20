@@ -18,10 +18,8 @@ const AdminPage = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 max-w-md">
-      <h1 className="text-2xl font-bold mb-4 text-center">
-        Admin - Add Product
-      </h1>
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">Admin - Add Product</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block text-sm font-medium text-gray-700">
@@ -49,19 +47,19 @@ const AdminPage = () => {
         </div>
         <button
           type="submit"
-          className="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         >
           Generate Link
         </button>
       </form>
       {generatedLink && (
-        <div className="mt-4 text-center">
+        <div className="mt-4">
           <p className="text-sm font-medium text-gray-700">Generated Link:</p>
           <a
             href={generatedLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-indigo-600 hover:underline break-all"
+            className="text-indigo-600 hover:underline"
           >
             {generatedLink}
           </a>
