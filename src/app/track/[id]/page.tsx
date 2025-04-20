@@ -1,3 +1,5 @@
+// Add this line at the top of the file
+"use client";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
